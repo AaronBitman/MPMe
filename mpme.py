@@ -240,6 +240,9 @@ class MpmeFolderPage(tk.Frame):
             # Stop the song, find the next song, and play it. 
             self.play(self.file_display.next_file(
                 self.path_now_playing, self.song_now_playing))
+            # Scroll to the song so that it's visible.
+            self.file_display.playlist.see(
+                self.file_display.playlist.curselection())
         else:
             self.current_time.increment()
             self.time_left.increment()
